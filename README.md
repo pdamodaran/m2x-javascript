@@ -1,7 +1,7 @@
 Javascript M2X API Client
 =====================
 
-The AT&T `M2X API`_ provides all the needed operations and methods to connect your devices to `AT&T's M2X service`_. This client provides an easy to use interface for
+The AT&T M2X API provides all the needed operations and methods to connect your devices to AT&T's M2X service. This client provides an easy to use interface for
 your favorite language, Javascript.
 
 
