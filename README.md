@@ -13,3 +13,8 @@ Getting Started
 4. Review the M2X API Documentation: https://m2x.att.com/developer/documentation/overview
 
 If you have questions about any M2X specific terms, please consult the M2X glossary: https://m2x.att.com/developer/documentation/glossary
+
+
+Setup
+------------
+*Coming soon...*
