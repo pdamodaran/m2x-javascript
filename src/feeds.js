@@ -1,4 +1,4 @@
-define(["m2x/helpers", "m2x/Keys"], function(helpers, Keys) {
+define(["helpers", "Keys"], function(helpers, Keys) {
     // Wrapper for AT&T M2X Feed API
     //
     // See https://m2x.att.com/developer/documentation/feed for AT&T M2X

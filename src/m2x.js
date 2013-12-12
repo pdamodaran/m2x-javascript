@@ -1,4 +1,4 @@
-define(["m2x/Client", "m2x/Keys", "m2x/Feeds"],
+define(["Client", "Keys", "Feeds"],
 function(Client, Keys, Feeds) {
     var M2X = function(apiKey, apiBase) {
         this.client = new Client(apiKey, apiBase);

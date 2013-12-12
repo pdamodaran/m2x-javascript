@@ -1,6 +1,6 @@
 /*globals XMLHttpRequest,XDomainRequest*/
 
-define(["m2x/helpers", function(helpers) {
+define(["helpers"], function(helpers) {
     var API_BASE = "http://api-m2x.att.com/v1";
 
     function request(options, onSuccess, onError) {
