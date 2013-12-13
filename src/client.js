@@ -29,7 +29,7 @@ define(["helpers"], function(helpers) {
         xhr.onerror = onError;
         xhr.onload = function() {
             if (onSuccess) {
-                var data = JSON.parse(xhr.responseText);
+                var data = xhr.responseText ? JSON.parse(xhr.responseText) : {};
                 onSuccess.apply(xhr, [data]);
             }
         }
