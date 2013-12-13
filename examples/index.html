@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script src="m2x.min.js"></script>
+
+    <!-- Keep in mind that the M2X Client does *not* require jQuery to work,
+         but for the purpose of keeping things simple we're using it in this example -->
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="example.js"></script>
+  </head>
+
+  <body>
+    <label>API Key:</label>
+    <input type="text" name="api-key">
+
+    <label>Feed ID:</label>
+    <input type="text" name="feed-id">
+
+    <fieldset id="feed-view">
+      <legend>Get feed information</legend>
+      <pre><code></code></pre>
+      <button>Get</button>
+    </fieldset>
+
+    <fieldset id="stream-push">
+      <legend>Push value to a stream</legend>
+
+      <label>Stream name:</label>
+      <input type="text" name="stream-name">
+
+      <label>Value:</label>
+      <input type="text" name="stream-value">
+
+      <button>Push value</button>
+    </fieldset>
+
+    <fieldset id="stream-view">
+      <legend>Fetch stream values</legend>
+
+      <label>Stream name:</label>
+      <input type="text" name="stream-name">
+
+      <pre><code></code></pre>
+      <button>Fetch values</button>
+    </fieldset>
+
+    <p id="status-bar">Status: <span></span></p>
+  </body>
+</html>
