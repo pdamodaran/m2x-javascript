@@ -16,7 +16,7 @@ If you have questions about any M2X specific terms, please consult the M2X gloss
 
 Compatibility
 -------------
-Right now this client is supported on all newer browsers except for IE8 and IE9.
+Currently, the M2X Javascript client is supported on all newer browsers except IE8 and IE9.
 
 
 Quick API Reference
@@ -34,7 +34,7 @@ After you've done this the ``m2x`` object will be able to communicate with M2X's
 
     m2x.keys.list(function(data) { /* ...do something ...*/ });
 
-As you can see the m2x has two properties named ``feeds`` and ``keys`` which
+As you can see, M2X has two properties named ``feeds`` and ``keys`` which
 at the same time contain methods for manipulating data. In order to see each
 specific method, check out the code under the ``src/`` directory.
 
