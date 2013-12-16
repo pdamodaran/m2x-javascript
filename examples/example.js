@@ -19,10 +19,10 @@
 
     M2XExample.prototype.bindEvents = function() {
         // Call onKeyChange when api key input changes
-        this.$apiKey.on("change", $.proxy("onKeyChange", this));
+        this.$apiKey.on("change", $.proxy(this, "onKeyChange"));
 
         // Call onFeedChange when feed-id input changes
-        this.$feedID.on("change", $.proxy("onFeedChange", this));
+        this.$feedID.on("change", $.proxy(this, "onFeedChange"));
 
         // Hook this event on all buttons so that we share the check
         // for api-key/feed-id, which is needed for all three operations
