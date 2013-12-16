@@ -24,7 +24,7 @@ Quick API Reference
 The main object encapsulating all API functionality is the global variable ``M2X``.
 An ``M2X`` object is initialized by passing an API key to it:
 
-    var m2x = new M2X("<API Key>");
+    var m2x = new M2X("<API Key>"[, "<Alternate API Server URL>"]);
 
 After you've done this the ``m2x`` object will be able to communicate with M2X's API:
 
