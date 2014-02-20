@@ -125,7 +125,6 @@ define(["helpers", "Keys"], function(helpers, Keys) {
         this.keysAPI.update(key, helpers.extend(params, { feed: id }), cb);
     };
 
-
     // Post multiple values to multiple streams
     //
     // This method allows posting multiple values to multiple streams
@@ -148,6 +147,42 @@ define(["helpers", "Keys"], function(helpers, Keys) {
             headers: { "Content-Type": "application/json" },
             params: { values: values }
         }, cb);
+    };
+
+    // Retrieve list of triggers associated with the specified feed.
+    Feeds.prototype.triggers = function(id, cb) {
+        return this.client.get(helpers.url("/feeds/%s/triggers", id), cb);
+    };
+
+    // Get details of a specific trigger associated with an existing feed.
+    Feeds.prototype.trigger = function(id, triggerID, cb) {
+        return this.client.get(helpers.url("/feeds/%s/triggers/%s", id, triggerID), cb);
+    };
+
+    // Create a new trigger associated with the specified feed.
+    Feeds.prototype.createTrigger = function(id, params, cb) {
+        return this.client.post(helpers.url("/feeds/%s/triggers", id), {
+            params: params
+        }, cb);
+    };
+
+    // Update an existing trigger associated with the specified feed.
+    Feeds.prototype.updateTrigger = function(id, triggerID, params, cb) {
+        return this.client.put(helpers.url("/feeds/%s/triggers/%s", id, triggerID), {
+            params: params
+        }, cb);
+    };
+
+    // Test the specified trigger by firing it with a fake value.
+    // This method can be used by developers of client applications
+    // to test the way their apps receive and handle M2X notifications.
+    Feeds.prototype.testTrigger = function(id, triggerName, cb) {
+        return this.client.post(helpers.url("/feeds/%s/triggers/%s", id, triggerName), cb);
+    };
+
+    // Delete an existing trigger associated with a specific feed.
+    Feeds.prototype.deleteTrigger = function(id, triggerID, cb) {
+        return this.client.del(helpers.url("/feeds/%s/triggers/%s", id, triggerID), cb);
     };
 
     return Feeds;
