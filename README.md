@@ -25,7 +25,7 @@ Currently, the M2X Javascript client is supported on all newer browsers except I
 The main object encapsulating all API functionality is the global variable ``M2X``.
 In order to create an M2X object you are going to need an API key, which can be either a Master Key or a key belonging to a specific feed (in which case you will only be allowed to read/write to this feed).
 
-An M2X object contains two objects named `feeds` and `keys`, which provide methods for communicating with the Feed API and Keys API respectively.
+An M2X object provides methods for communicating with the remote API. Methods are organized under the following modules: `batches`, `blueprints`, `datasources`, `feeds` and `keys`.
 
 The following is a short example on how to instantiate an M2X object:
 
@@ -42,6 +42,187 @@ m2x.status(function(status) {
     console.log(status);
 });
 ```
+
+### Batches ###
+
+The `batches` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+
+This is the full list of methods the `batches` object provides:
+
+* m2x.batches.list(callback)
+
+  List all the batches that belong to the user associated with the M2X API key supplied when initializing M2X.
+
+* m2x.batches.search(params, callback)
+
+  List/search all the data source batches that belong to the user
+  associated with the M2X API key supplied when initializing M2X
+  
+  The list of data source batches can be filtered by using one or
+  more of the following optional parameters:
+  
+  * `q` text to search, matching the name and description.
+  * `tags` a comma separated list of tags.
+  * `limit` how many results per page.
+  * `page` the specific results page, starting by 1.
+  * `latitude` and `longitude` for searching feeds geographically.
+  * `distance` numeric value in `distance_unit`.
+  * `distance_unit` either `miles`, `mi` or `km`.
+
+* m2x.batches.view(id, callback)
+
+  Retrieve information about an existing data source batch
+
+* m2x.batches.create(params, callback)
+
+  Create a new data source batch
+  
+  Accepts the following parameters as members of a hash:
+  
+  * `name` the name of the new data source.
+  * `visibility` either "public" or "private".
+  * `description` containing a longer description (optional).
+  * `tags` a comma separated string of tags (optional).
+
+* m2x.batches.update(params, callback)
+
+  Update an existing data source batch details
+  
+  Accepts the following parameters as members of a hash:
+  
+  * `name` the name of the new data source.
+  * `visibility` either "public" or "private".
+  * `description` containing a longer description (optional).
+  * `tags` a comma separated string of tags (optional).
+
+* m2x.batches.datasources(id, params, callback)
+
+  List/search all data sources in the batch
+  
+  See Datasources#search for search parameters description.
+
+* m2x.batches.addDatasource(id, serial, callback)
+
+  Add a new data source to an existing batch
+  
+  Accepts a `serial` parameter, that must be a unique identifier
+  within this batch.
+
+* m2x.batches.del(id, callback)
+
+  Delete an existing data source batch
+
+### Blueprints ###
+
+The `blueprints` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+
+This is the full list of methods the `blueprints` object provides:
+
+* m2x.blueprints.list(callback)
+
+  List all the blueprints that belong to the user associated with the M2X API key supplied when initializing M2X.
+
+* m2x.blueprints.search(params, callback)
+
+  List/search all the blueprints that belong to the user associated
+  with the M2X API key supplied when initializing M2X
+  
+  The list of blueprints can be filtered by using one or more of the
+  following optional parameters:
+  
+  * `q` text to search, matching the name and description.
+  * `tags` a comma separated list of tags.
+  * `limit` how many results per page.
+  * `page` the specific results page, starting by 1.
+  * `latitude` and `longitude` for searching feeds geographically.
+  * `distance` numeric value in `distance_unit`.
+  * `distance_unit` either `miles`, `mi` or `km`.
+
+* m2x.blueprints.view(id, callback)
+
+  Retrieve information about an existing data source blueprint
+
+* m2x.blueprints.create(params, callback)
+
+  Create a new data source blueprint
+  
+  Accepts the following parameters as members of a hash:
+  
+  * `name` the name of the new data source blueprint.
+  * `visibility` either "public" or "private".
+  * `description` containing a longer description (optional).
+  * `tags` a comma separated string of tags (optional).
+
+* m2x.blueprints.update(id, params, callback)
+
+  Update an existing data source blueprint's information
+  
+  Accepts the following parameters as members of a hash:
+  
+  * `name` the name of the new data source blueprint.
+  * `visibility` either "public" or "private".
+  * `description` containing a longer description (optional).
+  * `tags` a comma separated string of tags (optional).
+
+* m2x.blueprints.del(id, callback)
+
+  Delete an existing data source blueprint
+
+### Datasources ###
+
+The `datasources` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+
+This is the full list of methods the `datasources` object provides:
+
+* m2x.datasources.list(callback)
+
+  List all the datasources that belong to the user associated with the M2X API key supplied when initializing M2X.
+
+* m2x.datasources.search(params, callback)
+
+  List/search all the datasources that belong to the user associated
+  with the M2X API key supplied when initializing M2X
+  
+  The list of data sources can be filtered by using one or more of the
+  following optional parameters:
+  
+  * `q` text to search, matching the name and description.
+  * `tags` a comma separated list of tags.
+  * `limit` how many results per page.
+  * `page` the specific results page, starting by 1.
+  * `latitude` and `longitude` for searching feeds geographically.
+  * `distance` numeric value in `distance_unit`.
+  * `distance_unit` either `miles`, `mi` or `km`.
+
+* m2x.datasources.view(id, callback)
+
+  Retrieve information about an existing data source
+
+* m2x.datasources.create(params, callback)
+
+  Create a new data source
+  
+  Accepts the following parameters as members of a hash:
+  
+  * `name` the name of the new data source.
+  * `visibility` either "public" or "private".
+  * `description` containing a longer description (optional).
+  * `tags` a comma separated string of tags (optional).
+
+* m2x.datasources.update(id, params, callback)
+
+  Update an existing data source details
+ 
+  Accepts the following parameters as members of a hash:
+ 
+  * `name` the name of the new data source.
+  * `visibility` either "public" or "private".
+  * `description` containing a longer description (optional).
+  * `tags` a comma separated string of tags (optional).
+
+* m2x.datasources.del(id, callback)
+
+  Delete an existing data source
 
 ### Feeds ###
 
