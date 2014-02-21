@@ -334,7 +334,32 @@ This is the full list of methods the `feeds` object provides:
   ```
 
   If the `at` attribute is missing then the current time of the server, in UTC, will be used.
-  
+
+* m2x.feeds.triggers(id, callback)
+
+  Retrieve list of triggers associated with the specified feed.
+
+* m2x.feeds.trigger(id, triggerID, callback)
+
+  Get details of a specific trigger associated with an existing feed.
+
+* m2x.feeds.createTrigger(id, params, callback)
+
+  Create a new trigger associated with the specified feed.
+
+* m2x.feeds.updateTrigger(id, triggerID, params, callback)
+
+  Update an existing trigger associated with the specified feed.
+
+* m2x.feeds.testTrigger(id, triggerName, callback)
+
+  Test the specified trigger by firing it with a fake value.
+  This method can be used by developers of client applications
+  to test the way their apps receive and handle M2X notifications.
+
+* m2x.feeds.deleteTrigger(id, triggerID, callback)
+
+  Delete an existing trigger associated with a specific feed.
 
 ### Keys ###
 
