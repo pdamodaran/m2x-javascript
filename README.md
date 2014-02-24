@@ -45,7 +45,7 @@ m2x.status(function(status) {
 
 ### Batches ###
 
-The `batches` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+The `batches` object provides methods for communicating with the M2X Batches API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
 
 This is the full list of methods the `batches` object provides:
 
@@ -114,7 +114,7 @@ This is the full list of methods the `batches` object provides:
 
 ### Blueprints ###
 
-The `blueprints` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+The `blueprints` object provides methods for communicating with the M2X Blueprints API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
 
 This is the full list of methods the `blueprints` object provides:
 
@@ -170,7 +170,7 @@ This is the full list of methods the `blueprints` object provides:
 
 ### Datasources ###
 
-The `datasources` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+The `datasources` object provides methods for communicating with the M2X Datasources API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
 
 This is the full list of methods the `datasources` object provides:
 
@@ -363,7 +363,7 @@ This is the full list of methods the `feeds` object provides:
 
 ### Keys ###
 
-The `keys` object provides methods for communicating with the M2X Feed API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
+The `keys` object provides methods for communicating with the M2X Keys API. As it is with every other method provided by this library, they will all require at least one parameter which is the callback function.
 
 This is the full list of methods the `keys` object provides:
 
