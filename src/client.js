@@ -3,19 +3,33 @@
 define(["helpers"], function(helpers) {
     var API_BASE = "http://api-m2x.att.com/v1";
 
+    function encodeParams(params) {
+        var param, result;
+
+        for (param in params) {
+            var value = params[param];
+            result = result ? result + "&" : "";
+            result += encodeURIComponent(param) + "=" + encodeURIComponent(value);
+        }
+
+        return result;
+    };
+
     function request(options, onSuccess, onError) {
         var xhr = new XMLHttpRequest();
+        var querystring = encodeParams(options.qs);
+        var path = querystring ? options.path + "?" + querystring : options.path;
 
         if ("withCredentials" in xhr) {
             // Check if the XMLHttpRequest object has a "withCredentials" property.
             // "withCredentials" only exists on XMLHTTPRequest2 objects.
-            xhr.open(options.verb, options.path, true);
+            xhr.open(options.verb, path, true);
 
         } else if (typeof XDomainRequest !== "undefined") {
             // Otherwise, check if XDomainRequest.
             // XDomainRequest only exists in IE, and is IE's (8 & 9) way of making CORS requests.
             xhr = new XDomainRequest();
-            xhr.open(options.verb, options.path);
+            xhr.open(options.verb, path);
 
         } else {
             // Otherwise, CORS is not supported by the browser.
@@ -82,12 +96,7 @@ define(["helpers"], function(helpers) {
                 break;
 
             case "application/x-www-form-urlencoded":
-                var param;
-                for (param in options.params) {
-                    var value = options.params[param];
-                    body = body ? body + "&" : "";
-                    body += encodeURIComponent(param) + "=" + encodeURIComponent(value);
-                }
+                body = encodeParams(options.params);
                 break;
 
             default:
