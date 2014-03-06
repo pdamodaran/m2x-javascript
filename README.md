@@ -403,6 +403,18 @@ This is the full list of methods the `keys` object provides:
 There's an example included in the ``examples/`` directory.
 
 
+## Building from Source Code ##
+
+The source code for this library is located in the ``src/`` directory. For better organization and loading of modules we use the AMD API. The source is then built to a single distributable file (non-AMD) to make usage easier.
+
+In order to build this library you will need two things:
+
+* node.js
+* require.js (`npm install -g requirejs`)
+
+Once you have these installed go to the ``src/`` directory and run `r.js -o build.js`. If everything goes fine you should now a new `m2x.min.js` file in the library's root directory.
+
+
 ## License ##
 
 This gem is delivered under the MIT license. See [LICENSE](LICENSE) for the terms.
