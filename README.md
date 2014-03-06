@@ -405,14 +405,14 @@ There's an example included in the ``examples/`` directory.
 
 ## Building from Source Code ##
 
-The source code for this library is located in the ``src/`` directory. For better organization and loading of modules we use the AMD API. The source is then built to a single distributable file (non-AMD) to make usage easier.
+The source code for this library is located in the ``src/`` directory. For better organization and loading of modules we use the AMD API. Using a small replacement of [require.js](http://requirejs.org/) called [almond](https://github.com/jrburke/almond) the source is then build into a single distributable file (non-AMD) to make distribution and usage easier.
 
-In order to build this library you will need two things:
+In order to build this library you will need two things (almond comes included in this repo inside the ``dist/``directory):
 
 * [node.js](http://nodejs.org/)
 * [require.js](http://requirejs.org/) (`npm install -g requirejs`)
 
-Once you have these installed go to the ``src/`` directory and run `r.js -o build.js`. If everything goes well you should now have a new `m2x.min.js` file in the library's root directory.
+Once you have these installed go to the ``dist/`` directory and run `./build.sh` (make sure the script has execute permissions). If everything goes well you should now have a minified file named `m2x-VERSION.min.js` file and a non-minified version named `m2x-VERSION.js` in the library's root directory.
 
 
 ## License ##
