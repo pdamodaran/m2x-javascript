@@ -412,7 +412,7 @@ In order to build this library you will need two things:
 * [node.js](http://nodejs.org/)
 * [require.js](http://requirejs.org/) (`npm install -g requirejs`)
 
-Once you have these installed go to the ``src/`` directory and run `r.js -o build.js`. If everything goes fine you should now a new `m2x.min.js` file in the library's root directory.
+Once you have these installed go to the ``src/`` directory and run `r.js -o build.js`. If everything goes well you should now have a new `m2x.min.js` file in the library's root directory.
 
 
 ## License ##
