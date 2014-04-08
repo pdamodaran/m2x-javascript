@@ -30,8 +30,6 @@ An M2X object provides methods for communicating with the remote API. Methods ar
 The following is a short example on how to instantiate an M2X object:
 
 ```javascript
-var M2X = require("m2x");
-
 var m2x = new M2X("<API-KEY>");
 ```
 
