@@ -413,6 +413,13 @@ In order to build this library you will need two things (almond comes included i
 Once you have these installed go to the ``dist/`` directory and run `./build.sh` (make sure the script has execute permissions). If everything goes well you should now have a minified file named `m2x-VERSION.min.js` file and a non-minified version named `m2x-VERSION.js` in the library's root directory.
 
 
+## Common Errors ##
+
+If you need help handling errors within the required libraries, please check out these helpful resources:
+* require.js common errors: http://requirejs.org/docs/errors.html
+* node.js debugging: http://nodejs.org/api/debugger.html
+* almond common errors: https://github.com/jrburke/almond#common-errors
+
 ## License ##
 
 This gem is delivered under the MIT license. See [LICENSE](LICENSE) for the terms.
